@@ -1,8 +1,10 @@
 # CSS Zen Garden: The Beauty of CSS Design
 
-> [Your name]
->  
-> [Your ID]
+> Lapat Sarakunpradit
+
+>  ลภัส สารคุณประดิษฐ์ 
+
+> 6210406653
 
 ## Task
 

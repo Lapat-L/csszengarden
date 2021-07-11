@@ -1,0 +1,155 @@
+$primary-font: "Cookie", cursive;
+$secondly-font: 'Teko', sans-serif;
+$light-color: bisque;
+$a-color: salmon;
+$primary-border:0.14em dashed bisque;
+$white-color: white;
+$sandy-color: sandybrown;
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+@mixin topic($max-width: 7em,$a: $a-color){
+    h3{
+        max-width: $max-width;
+        border: $primary-border;
+        animation-name: changecolor;
+        animation-duration: 4s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
+    color: $white-color;
+    a{
+        color: $a;
+    }
+}
+@keyframes changecolor{
+    0% {color: $sandy-color;}
+    100% {color: $white-color;}
+}
+
+body{
+    background: #271F4F;
+    background: -moz-linear-gradient(top, #271F4F 0%, #6659A5 33%, #9D8EC4 100%);
+    background: -webkit-linear-gradient(top, #271F4F 0%, #6659A5 33%, #9D8EC4 100%);
+    background: linear-gradient(to bottom, #271F4F 0%, #6659A5 33%, #9D8EC4 100%);
+}
+h3{
+    color:$sandy-color;
+    margin-left: 0.75em;
+    font-size: 3em;
+    font-family: $primary-font;
+}
+p{
+    margin-left: 1.5em;
+    font-size: 1.5em;
+    font-family: $secondly-font;
+}
+.explanation{
+    @include topic($max-width: 7.5em)
+}
+.participation{
+    @include topic($max-width: 4.5em);
+}
+.benefits{
+    @include topic($max-width: 2.75em);
+}
+.requirements{
+    @include topic($max-width: 4.5em,$a:pink);
+}
+a:hover{
+    color: moccasin;
+}
+footer{
+    margin-top: 2em;
+    text-align: center;
+    font: bold 2em $primary-font;
+    text-decoration: none;
+    margin-bottom: 2em;
+    a:hover{
+        color: #957DAD;
+        background-color: #FEC8D8;
+        padding: 10px 40px 10px 10px;
+    }
+    a{
+        color: #704523;
+        background-color: $light-color;
+        padding: 10px 10px 10px 10px;
+        margin-right: 1em;
+        border-radius: 20%;
+        box-shadow: black 5px 3px 12px 9px;
+        transition: 0.5s;
+    }
+    a:after{
+        content: ">>";
+        opacity: 0;
+        transition: 0.5s;
+        position: absolute;
+    }
+    a:hover:after{
+        opacity: 1;
+    }
+    .zen-github{
+        margin-right: 0em;
+    }
+}
+.page-wrapper{
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-gap: 0px;
+    padding: 0px;
+}
+header{
+    text-shadow: 7px 4px 13px rgb(224, 179, 139);
+    margin: 0px;
+    color: $sandy-color;
+    text-align: center;
+    font-family: $primary-font;
+    h1{
+        position: center center;
+        font-size: 6em;
+        margin: 0px;
+    }
+    h2{
+        font-size: 4em;
+        margin: 0px;
+    }
+}
+.summary{
+    margin-top: 50px;
+    color: $white-color;
+    a{
+        color: $a-color;
+    }
+}
+.preamble{
+    @include topic(9em);
+}
+.intro > header{
+    grid-column: 1/2;
+}
+.sidebar{
+    h3{
+        margin-left: 0px;
+        border-bottom: 8px solid $white-color;
+    }
+    grid-column: 2/3;
+    grid-row: 1/3;
+    font-size: 1.5em;
+    margin-top: 5em;
+    li{
+        color: rgb(179, 205, 255);
+        font-family: $secondly-font;
+    }
+    a{
+        color: antiquewhite;
+        font-family: $secondly-font;
+    }
+    background-image: url("image/spaceship.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+    
+}
+.main{
+    grid-column: 1/2;
+}
